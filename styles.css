@@ -1,0 +1,42 @@
+.clock {
+    position: relative;
+    width: 600px;  /* Tăng kích thước lên 300px */
+    height: 600px; /* Tăng kích thước lên 300px */
+    border-radius: 50%;
+    margin: 50px auto;
+    background: white;
+    transform: rotate(-90deg); /* Xoay đồng hồ sang trái 90 độ */
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    transform: rotate(90deg);
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+    font-size: 28px;  /* Tăng kích thước font để phù hợp với kích thước đồng hồ */
+    font-family: Arial, sans-serif;
+    color: black;
+    white-space: nowrap;
+}
+
+.center {
+    position: absolute;
+    width: 20px; /* Tăng kích thước của trung tâm */
+    height: 20px; /* Tăng kích thước của trung tâm */
+    background: black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hand::after {
+    content: attr(data-time);
+    position: absolute;
+    top: -20px;  /* Điều chỉnh vị trí theo kích thước mới */
+    left: 50%;
+    transform: translateX(-50%);
+}
